@@ -35,3 +35,7 @@
 #### lets consider Bi-grams:
 ![alt text](image-11.png)
 #### IN Bi-grams we combine Two Features and make into one single feature, good boy is a feature, good girl is another feature
+![alt text](image-12.png)
+#### In this there can be only 2 Bi grams, Krish Food Bi gram is not Valid
+### TriGRams:
+![alt text](image-13.png)
