@@ -39,3 +39,19 @@
 #### In this there can be only 2 Bi grams, Krish Food Bi gram is not Valid
 ### TriGRams:
 ![alt text](image-13.png)
+
+## Drawback fo using BOW:
+![alt text](image-14.png)
+#### When the cosine Similarityb is calculated betwen the two opposite sentences, they turns out to be similar, thus BOW does not give the Semantic meaning of the sentence. this is where TF_IDF is used
+#### in BOW all the words are given same imporrance, tha ti severy word is given value 1 if they are present, for example, the importance of the word good is significant than the word boy, but still both are given the same 1, this is why we use Term Frequency - Inverse document Frequency
+
+## TF-IDF: Term Frequency - Inverse Document Frequency
+#### Whichever words are rarely occurs in the sentences are given **more weightage**.
+#### Rare words are identified by Term Frequency.
+#### Common words are captured by Inverse Document Frequency. 
+![alt text](image-15.png)
+![alt text](image-16.png)
+### TF-IDF is calculated by multiplying both the formulas
+![alt text](image-19.png)
+![alt text](image-17.png)
+![alt text](image-18.png)
