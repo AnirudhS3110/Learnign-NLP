@@ -18,7 +18,7 @@
 #### -- First Determine and set the WindowSize. Window size is the number of words to be considered at one single time.
 #### The middle word in the Window will be the Target Word. other words are context words.COntext words contributes to Independent Feature and the Target Word COntributes to Output Feature.
 #### Window Size is a Hyperparameter. Bigger the window size, Better the model we get.
-#### The diagram shows feature Representation:
+#### The diagram shows feature Representation: E
 ![alt text](image-2.png)
 ### - Word2Vec takes all the Independent Features , and based on the Output word, Vector is Generated. 
 ### - The vectors generated should be such a way that, it should be SIMILAR to the  **Output Feature**
