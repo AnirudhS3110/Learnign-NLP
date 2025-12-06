@@ -1,17 +1,5 @@
 
-
-## Interview Questions
-1) What is difference betweenm Train, Test and validation Datasets?
- - TRAINING ds, is used to TRAIN the Model
- - TEST dataset is the data set which is not shown to the model whitle training. If it's shown its causes Data Leakage
- - TRAINING ds is split into VALIDATION ds and TRAINING ds , this VALIDATION ds is used for HyperParameter tuning of the model.
- - For Hyper ParAameter tuning , we use tehe Concept of CROSS VALIDATION.(EXample: GridSearchCV, RandomizedSearchCV)
-2) Why people use RandomForest mostly than Decision Trees?
- - To avoid OverFittiing
- - Decision Tree usually has Low Bias and High Variance (Overfitting)
- - In order to reduce the High variance to Low Variance and keep low bias as low bias, we use Random Forest
-
- ![alt text](image.png)
+![alt text](image.png)
  # Recurrent Neural network
  - In chatbots, the chatbot need to understand each and every word, based on the **sequence** of the words. here the **sequence** of the words is very impportant!
  - Same with language translations, Sequence of the words is very important to understand the Context of the sentence
@@ -66,3 +54,31 @@
 - We already have the original y value (the targer value), with y_hat and y we calculate the Loss function, 
 - After finding loss, all  weights are updated (both w' and w)
 ![alt text](image-13.png)
+
+### Back Propagation  in RNN:
+![alt text](image-18.png)
+
+![alt text](image-20.png)
+
+- **Early Stopping** : Done when the loss becomes almost stagnant, this marks the end of the model Training.
+- If the RNN is veryy long, then we may face Vanishing Gradient problem. 
+- This is becos, mostly we are gonna use Sigmoid Function as then Activation Function, we know it ranges from 0 to 1 and its Derivative ranges from 0 to .25, as the model goes deeper and deeper, the loss gradient may tend to zero, and teh weight updation will become negligible, so alll the time there will be teh same Weight.
+- To tackle this, LSTM RNN's were introduced! ( Long Short Term Memory Recurrent Neural Network).
+
+
+## Notes from <a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">Colah 2015-08-Understannding LSTMs</a>
+- A recurrent neural network can be thought of as multiple copies of the same network, each passing a message to a successor.
+![alt text](image-14.png)
+
+#### Problem in RNN (Long Term Dependencies):
+- One of the appeals of RNNs is the idea that they might be able to connect previous information to the present task.
+- Sometimes, we only need to look at recent information to perform the present task
+- there are also cases where we need more context.
+- Consider trying to predict the last word in the text “I grew up in France… I speak fluent French.” Recent information suggests that the next word is probably the name of a language, but if we want to narrow down which language, we need the context of France, from further back.
+- ```As that gap grows, RNNs become unable to learn to connect the information.```
+![alt text](image-15.png)
+- In theory, RNNs are absolutely capable of handling such “long-term dependencies.” A human could carefully pick parameters for them to solve toy problems of this form. Sadly, in practice, RNNs don’t seem to be able to learn them.
+- This means if there is a very deep RNN, and the last word needs context of the First Word to get the meaning, RNN fails here.
+- This problem is Solved by LSTM RNN's
+![alt text](image-16.png)
+- Consider trying to predict the last word in the text “I grew up in France… I speak fluent French.” Recent information suggests that the next word is probably the name of a language, but if we want to narrow down which language, we need the context of France, from further back.
